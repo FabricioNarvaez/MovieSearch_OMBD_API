@@ -1,0 +1,82 @@
+:root{
+    --grisOscuro: #202225;
+    --grisClaroTxt: #b6bbc4;
+    --grisClaro: #2f3136;
+    --azul: #4b7bec;
+    --blanco: #ffffff;
+    --fuenteTitulo: 'Audiowide', cursive;
+    --fuenteBody: 'Quicksand', sans-serif;
+    /*--colorEstrellas: #666;
+    --colorEstrellasHover: #fd4;
+    --colorEstrellasHover2: #fe7;*/
+}
+
+/* Global CSS*/
+
+body{
+    background-color: var(--grisOscuro);
+}
+
+body, .text-footer{
+    font-family: --var(--fuenteBody);
+}
+
+a{
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--grisClaro);
+    border-radius: 20px;
+}
+
+h1{
+    font-size: 38px;
+    color: var(--blanco);
+}
+
+h2, b{
+    font-family: 'BluuNextBoldItalic';
+}
+
+body{
+    font-size: 18px;
+}
+
+p, h2{
+    margin: 5px;
+}
+
+img{
+    margin-bottom: 15px;
+}
+
+/* Header */
+
+.titulo{
+    max-width: 100%;
+    background-color: var(--azul);
+    border-radius: 20px 20px 0 0;
+    font-family: var(--fuenteTitulo);
+    height: 70px;
+    margin-top: 40px;
+    display: grid;
+    align-content: center;
+}
+
+/* Footer */
+
+.text-footer{
+    color: var(--blanco);
+    font-size: 15px;
+    bottom: 15px;
+    width: 98%;
+    position: absolute;
+    text-align: center;
+}
