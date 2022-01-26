@@ -29,7 +29,7 @@ a{
 .contenedor {
     max-width: 1200px;
     width: 95%;
-    height: 500px;
+    min-height: 800px;
     margin: 0 auto;
     text-align: center;
     background-color: var(--grisClaro);
@@ -68,6 +68,20 @@ img{
     margin-top: 40px;
     display: grid;
     align-content: center;
+}
+
+/* Search */
+input[type="search"]{
+    text-align: center;
+    font-size: 17px;
+    height: 45px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 20px;
+    
+}
+input[type="search"]:focus, .contenedor{
+    box-shadow: 0px 0px 20px 0px rgba(63,153,232,1);
 }
 
 /* Footer */
