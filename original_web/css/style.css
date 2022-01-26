@@ -1,0 +1,122 @@
+:root{
+    --grisOscuro: #202225;
+    --grisClaroTxt: #b6bbc4;
+    --grisClaro: #2f3136;
+    --azul: #4b7bec;
+    --blanco: #ffffff;
+    /*--colorEstrellas: #666;
+    --colorEstrellasHover: #fd4;
+    --colorEstrellasHover2: #fe7;*/
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--grisOscuro);
+}
+
+.contenedor {
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--grisClaro);
+    border-radius: 2rem;
+}
+
+h1{
+    font-size: 3.8rem;
+    color: var(--blanco);
+}
+h2, b{
+    font-family: 'BluuNextBoldItalic';
+}
+body{
+    font-size: 1.8rem;
+}
+p, h2{
+    margin: 0.5rem;
+}
+img{
+    margin-bottom: 1.5rem;
+}
+
+/** Clases **/
+
+.titulo{
+    max-width: 100%;
+    background-color: var(--azul);
+    border-radius: 2rem 2rem 0 0;
+}
+
+/*.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}*/
+
+.pelicula{
+    color: var(--grisClaroTxt);
+}
+
+.columnas{
+    display: grid;
+    gap: 2.5rem;
+}
+
+.pelicula{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;  /* Centrar horizontalmente*/
+    align-items: center;            /* Centrar vertical*/
+}
+
+/*.estrellas input{
+    display: none;
+}
+
+.estrellas label{
+    font-size: 3.5rem;
+    color: var(--colorEstrellas);
+    transition: all 0.2s ease;
+    float: right;
+}
+
+.estrellas input:not(checked) ~ label:hover,
+.estrellas input:not(checked) ~ label:hover ~ label{
+    color: var(--colorEstrellasHover);
+}
+
+.estrellas input:checked ~ label{
+    color: var(--colorEstrellasHover);
+}
+
+.estrellas input#puntuacion-5:checked ~ label{
+    color: var(--colorEstrellasHover2);
+    text-shadow: 0 0 2rem;
+}*/
+
+/** Media queries **/
+
+@media (max-width: 779px) {
+    .columnas{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 780px) {
+    .columnas{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1170px) {
+    .columnas{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
