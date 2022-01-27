@@ -4,6 +4,7 @@
     --lightGrey: #2f3136;
     --blue: #4b7bec;
     --white: #ffffff;
+    --yellow: rgb(245, 241, 16);
     --titleFont: 'Audiowide', cursive;
     --bodyFont: 'Quicksand', sans-serif;
 }
@@ -92,8 +93,7 @@ input[type="text"]{
     
 }
 input[type="text"]:focus,
-.contenedor,
-.btn:hover{
+.contenedor{
     box-shadow: 0px 0px 15px 0px rgba(63,153,232,1);
 }
 
@@ -111,6 +111,12 @@ input[type="text"]:focus,
     height: 32px;
 }
 
+.seeMore:hover{
+    cursor: pointer;
+    border-radius: 0;
+    border-bottom: 2px solid var(--blue);
+}
+
 .columns{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -122,6 +128,41 @@ input[type="text"]:focus,
 
 .columnsUnd{
     font-size: 25px;
+}
+
+/* Film View*/
+.filmView{
+    margin: 10px;
+    padding: 15px;
+    width: 70%;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.filmView p{
+    text-align: left;
+}
+
+.genre{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.genre .genFor{
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+}
+
+span{
+    color: var(--yellow);
+}
+
+.err{
+    padding: 15px;
 }
 
 /* Warning*/
@@ -188,7 +229,8 @@ input[type="text"]:focus,
         height: 42px;
     }
 
-    .film img{
+    .film img,
+    .filmView img{
         width: 80%;
     }
 

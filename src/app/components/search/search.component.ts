@@ -23,13 +23,13 @@ export class SearchComponent implements OnInit {
     }
 
     goSearch(){
-        console.log(this._filmService.getFilm(this.searchString).subscribe(
+        console.log(this._filmService.getAllFilms(this.searchString).subscribe(
             res =>{
                 this.filmsArray = res.Search;                    
             },
             error =>{
                 console.log(error);
             }
-            ));
+        ));
     }
 }

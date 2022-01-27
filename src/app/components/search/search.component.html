@@ -4,8 +4,8 @@
 
 <div class="search">
     <form #searchForm="ngForm" (ngSubmit)="goSearch()" class="formSearch">
-        <input [(ngModel)]="searchString" type="text" name="search" placeholder="¿Qué película quieres buscar?"/>
-        <input type="submit" name="submit" value="Buscar" class="btn-search"/>
+        <input [(ngModel)]="searchString" type="text" name="search" placeholder="What movie do you want to search?"/>
+        <input type="submit" name="submit" value="Search" class="btn-search"/>
     </form>
     <div class="columns" *ngIf="filmsArray">
         <div class="film" *ngFor="let film of filmsArray">
@@ -14,11 +14,11 @@
                 <img src="../../../assets/images/Unavailable.jpg" alt="Unavailable" *ngIf="film.Poster === 'N/A'">    
             </div>
             <h2>{{film.Title}}</h2>
-            <p>Año: {{film.Year}}</p>
-            <input type="submit" name="submit" value="Ver más" class="btn"/>
+            <p>Year: {{film.Year}}</p>
+            <a [routerLink]="['film/', film.imdbID]" class="btn seeMore">See more</a>
         </div>
     </div>
     <div class="columnsUnd" *ngIf="filmsArray === undefined">
-        <h2>Película no encontrada</h2>
+        <h2>Film not found</h2>
     </div>
 </div>

@@ -2,5 +2,29 @@
     [headerTitle]="parentTitle"
 ></app-header>
 
-<h1 style="color: white;">{{nombre}}</h1>
-<p>film works!</p>
+
+<div class="err" *ngIf="err === true">
+    <h2>There are no movies to show, try again later :)</h2>
+    <a [routerLink]="['/']" class="btn seeMore">Back home</a>
+</div>
+
+<div class="filmView" *ngIf="err === false">
+    <img src="{{Poster}}" alt="{{parentTitle}}">
+    <div class="genre">
+        <div class="genFor" *ngFor="let gen of Genre">
+            <p>{{gen}}</p>
+        </div>
+    </div>
+    <p><b>Year: </b> {{Year}}</p>
+    <p><b>Running time: </b>{{Runtime}}</p>
+    <hr>
+    <p>{{Plot}}</p>
+    <hr>
+    <p><b>Directed by: </b>{{Director}}</p>
+    <hr>
+    <p><b>Starring: </b>{{MainActors}}</p>
+    <hr>
+    <p><b>IMDb Rating: <span>&#9733;</span></b> {{Rate}} / 10</p>
+    <a [routerLink]="['/']" class="btn seeMore">Back home</a>
+</div>
+

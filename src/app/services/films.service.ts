@@ -11,14 +11,18 @@ export class FilmService{
     constructor(
         private _http: HttpClient
     ){
-        this.url = Global.url + Global.key + Global.search;
+        this.url = Global.url + Global.key ;
     }
 
     pruebas(){
         return "Soy el servicio de films";
     }
 
+    getAllFilms(searchString:string):Observable<any>{
+        return this._http.get(this.url + Global.search + searchString);
+    }
+
     getFilm(searchString:string):Observable<any>{
-        return this._http.get(this.url + searchString);
+        return this._http.get(this.url + Global.filmId + searchString);
     }
 }
