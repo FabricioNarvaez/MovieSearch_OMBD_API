@@ -3,11 +3,20 @@
 ></app-header>
 
 <div class="search">
-    <input type="text" id="text" placeholder="¿Qué película quieres buscar?" (keypress)="goSearch($event)"/>
-    <div class="pelicula" *ngFor="let film of filmsArray">
-        <img src="{{film.Poster}}" alt="{{film.Title}}">
-        <h2 style="color: white;">{{film.Title}}</h2>
-        <p>Año: {{film.Year}}</p>
-        <input type="submit" name="submit" value="Ver más" class="btn"/>
+    <form #searchForm="ngForm" (ngSubmit)="goSearch()" class="formSearch">
+        <input [(ngModel)]="searchString" type="text" name="search" placeholder="¿Qué película quieres buscar?"/>
+        <input type="submit" name="submit" value="Buscar" class="btn-search"/>
+    </form>
+    <div class="columnas" *ngIf="filmsArray">
+        <div class="pelicula" *ngFor="let film of filmsArray">
+            <img src="{{film.Poster}}" alt="{{film.Title}}" *ngIf="film.Poster !== 'N/A'">
+            <img src="../../../assets/images/Unavailable.jpg" alt="Unavailable" *ngIf="film.Poster === 'N/A'">
+            <h2>{{film.Title}}</h2>
+            <p>Año: {{film.Year}}</p>
+            <input type="submit" name="submit" value="Ver más" class="btn"/>
+        </div>
+    </div>
+    <div class="columnas" *ngIf="filmsArray === undefined">
+        <h2>Película no encontrada</h2>
     </div>
 </div>

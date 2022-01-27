@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, appRputingProviders } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -23,6 +24,7 @@ import { ErrorComponent } from './components/error/error.component';
   imports: [
     BrowserModule,
     FontAwesomeModule,
+    FormsModule,
     routing,
     HttpClientModule
   ],

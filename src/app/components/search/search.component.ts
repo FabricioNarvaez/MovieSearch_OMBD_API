@@ -22,14 +22,10 @@ export class SearchComponent implements OnInit {
         
     }
 
-    goSearch(event:any){
-        //console.log();event.target.value
-        console.log(this._filmService.getFilm(event.target.value).subscribe(
+    goSearch(){
+        console.log(this._filmService.getFilm(this.searchString).subscribe(
             res =>{
-                
-                if(res.Search)
-                    this.filmsArray = res.Search;
-                    
+                this.filmsArray = res.Search;                    
             },
             error =>{
                 console.log(error);
