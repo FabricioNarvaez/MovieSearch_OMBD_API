@@ -17,6 +17,7 @@ export class FilmComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this._route.params.subscribe((params: Params) =>{
       console.log(params);
       this.nombre = params.id;

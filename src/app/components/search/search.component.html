@@ -3,5 +3,11 @@
 ></app-header>
 
 <div class="search">
-    <input type="search" id="search" placeholder="¿Qué película quieres buscar?"/>
+    <input type="text" id="text" placeholder="¿Qué película quieres buscar?" (keypress)="goSearch($event)"/>
+    <div class="pelicula" *ngFor="let film of filmsArray">
+        <img src="{{film.Poster}}" alt="{{film.Title}}">
+        <h2 style="color: white;">{{film.Title}}</h2>
+        <p>Año: {{film.Year}}</p>
+        <input type="submit" name="submit" value="Ver más" class="btn"/>
+    </div>
 </div>
